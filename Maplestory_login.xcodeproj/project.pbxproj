@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		169D67042DDA267200941E25 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D67032DDA267200941E25 /* IOKit.framework */; };
+		169D67062DDA267800941E25 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D67052DDA267700941E25 /* Cocoa.framework */; };
+		169D67082DDA267E00941E25 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D67072DDA267E00941E25 /* OpenGL.framework */; };
+		169D670A2DDA268900941E25 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D67092DDA268900941E25 /* CoreVideo.framework */; };
+		169D670C2DDA269D00941E25 /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D670B2DDA269D00941E25 /* libGLEW.a */; };
+		169D670E2DDA26C500941E25 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D670D2DDA26C500941E25 /* libglfw3.a */; };
+		169D67102DDA26D900941E25 /* liblz4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D670F2DDA26D900941E25 /* liblz4.a */; };
+		169D67122DDA26F000941E25 /* libNoLifeNx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 169D67112DDA26F000941E25 /* libNoLifeNx.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		169D66F62DDA243300941E25 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		169D66F82DDA243300941E25 /* Maplestory_login */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Maplestory_login; sourceTree = BUILT_PRODUCTS_DIR; };
+		169D67032DDA267200941E25 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		169D67052DDA267700941E25 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		169D67072DDA267E00941E25 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		169D67092DDA268900941E25 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		169D670B2DDA269D00941E25 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "../vcpkg/installed/x64-osx/lib/libGLEW.a"; sourceTree = "<group>"; };
+		169D670D2DDA26C500941E25 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "../vcpkg/installed/x64-osx/lib/libglfw3.a"; sourceTree = "<group>"; };
+		169D670F2DDA26D900941E25 /* liblz4.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblz4.a; path = "../vcpkg/installed/x64-osx/lib/liblz4.a"; sourceTree = "<group>"; };
+		169D67112DDA26F000941E25 /* libNoLifeNx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNoLifeNx.a; path = "../vcpkg/installed/x64-osx/lib/libNoLifeNx.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		169D67182DDA285D00941E25 /* Maplestory_login */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Maplestory_login;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		169D66F52DDA243300941E25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				169D67122DDA26F000941E25 /* libNoLifeNx.a in Frameworks */,
+				169D67102DDA26D900941E25 /* liblz4.a in Frameworks */,
+				169D670E2DDA26C500941E25 /* libglfw3.a in Frameworks */,
+				169D670C2DDA269D00941E25 /* libGLEW.a in Frameworks */,
+				169D670A2DDA268900941E25 /* CoreVideo.framework in Frameworks */,
+				169D67082DDA267E00941E25 /* OpenGL.framework in Frameworks */,
+				169D67062DDA267800941E25 /* Cocoa.framework in Frameworks */,
+				169D67042DDA267200941E25 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		169D66EF2DDA243300941E25 = {
+			isa = PBXGroup;
+			children = (
+				169D67182DDA285D00941E25 /* Maplestory_login */,
+				169D67022DDA267200941E25 /* Frameworks */,
+				169D66F92DDA243300941E25 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		169D66F92DDA243300941E25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				169D66F82DDA243300941E25 /* Maplestory_login */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		169D67022DDA267200941E25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				169D67112DDA26F000941E25 /* libNoLifeNx.a */,
+				169D670F2DDA26D900941E25 /* liblz4.a */,
+				169D670D2DDA26C500941E25 /* libglfw3.a */,
+				169D670B2DDA269D00941E25 /* libGLEW.a */,
+				169D67092DDA268900941E25 /* CoreVideo.framework */,
+				169D67072DDA267E00941E25 /* OpenGL.framework */,
+				169D67052DDA267700941E25 /* Cocoa.framework */,
+				169D67032DDA267200941E25 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		169D66F72DDA243300941E25 /* Maplestory_login */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 169D66FF2DDA243300941E25 /* Build configuration list for PBXNativeTarget "Maplestory_login" */;
+			buildPhases = (
+				169D66F42DDA243300941E25 /* Sources */,
+				169D66F52DDA243300941E25 /* Frameworks */,
+				169D66F62DDA243300941E25 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				169D67182DDA285D00941E25 /* Maplestory_login */,
+			);
+			name = Maplestory_login;
+			packageProductDependencies = (
+			);
+			productName = Maplestory_login;
+			productReference = 169D66F82DDA243300941E25 /* Maplestory_login */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		169D66F02DDA243300941E25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					169D66F72DDA243300941E25 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = 169D66F32DDA243300941E25 /* Build configuration list for PBXProject "Maplestory_login" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 169D66EF2DDA243300941E25;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 169D66F92DDA243300941E25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				169D66F72DDA243300941E25 /* Maplestory_login */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		169D66F42DDA243300941E25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		169D66FD2DDA243300941E25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UD3M3WW5SQ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/include";
+				LIBRARY_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/lib";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		169D66FE2DDA243300941E25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UD3M3WW5SQ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/include";
+				LIBRARY_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/lib";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		169D67002DDA243300941E25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UD3M3WW5SQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		169D67012DDA243300941E25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UD3M3WW5SQ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "/Users/jacob/dev/vcpkg/installed/x64-osx/include";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		169D66F32DDA243300941E25 /* Build configuration list for PBXProject "Maplestory_login" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				169D66FD2DDA243300941E25 /* Debug */,
+				169D66FE2DDA243300941E25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		169D66FF2DDA243300941E25 /* Build configuration list for PBXNativeTarget "Maplestory_login" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				169D67002DDA243300941E25 /* Debug */,
+				169D67012DDA243300941E25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 169D66F02DDA243300941E25 /* Project object */;
+}
