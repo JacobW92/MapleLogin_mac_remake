@@ -49,7 +49,11 @@ namespace ms
             return static_cast<T>(std::sqrt(a*a+b*b));
         }
         
-        
+        // Check whether the coordinates are equal.
+        // 检查坐标是否相等
+        constexpr bool straight() const {
+            return a == b;
+        }
         
     private:
         T a;
