@@ -29,9 +29,25 @@ namespace ms
         // 从一个特定的坐标构建一个坐标点。
         constexpr Point(T fir, T sec) : a(fir), b(sec) {}
         // Construct a point with coordinates (0, 0).
-        // 从
+        // 从(0, 0)构建一个坐标。
         constexpr Point() : Point(0, 0) {}
+        // Return the x-coordinate.
+        // 返回x坐标
+        constexpr T x() const {
+            return a;
+        }
+        // Return the y-coordinate.
+        // 返回y坐标
+        constexpr T y() const {
+            return b;
+        }
         
+        // Return the inner product.
+        // 返回距离
+        
+        constexpr T length() const {
+            return static_cast<T>(std::sqrt(a*a+b*b));
+        }
         
         
         
