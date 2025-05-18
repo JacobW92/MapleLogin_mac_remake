@@ -10,4 +10,24 @@
 
 #include <stdio.h>
 
+namespace ms {
+
+    template <class T>
+    class Singleton
+    {
+    public:
+        virtual ~Singleton() {}
+        
+        static T& get() {
+            return instance;
+        }
+        
+    private:
+        T& operator = (const T&) = delete;
+        
+        static T instance;
+    };
+}
+
+
 #endif /* Singleton_hpp */

@@ -18,43 +18,34 @@ namespace ms
     class Point
     {
     public:
-        // Construct a point from  a vector property.
-        // 从向量的属性构建一个坐标点。
-        Point(nl::node src)
-        {
-            a = static_cast<T>(src.x());
-            b = static_cast<T>(src.y());
-        }
-        // Construct a point from the specified coordinates.
-        // 从一个特定的坐标构建一个坐标点。
-        constexpr Point(T fir, T sec) : a(fir), b(sec) {}
-        // Construct a point with coordinates (0, 0).
-        // 从(0, 0)构建一个坐标。
-        constexpr Point() : Point(0, 0) {}
-        // Return the x-coordinate.
-        // 返回x坐标
-        constexpr T x() const {
-            return a;
-        }
-        // Return the y-coordinate.
-        // 返回y坐标
-        constexpr T y() const {
-            return b;
-        }
-        
-        // Return the inner product.
-        // 返回距离
-        
-        constexpr T length() const {
-            return static_cast<T>(std::sqrt(a*a+b*b));
-        }
-        
-        // Check whether the coordinates are equal.
-        // 检查坐标是否相等
-        constexpr bool straight() const {
-            return a == b;
-        }
-        
+        Point(nl::node src);
+        constexpr Point(T fir, T sec);
+        constexpr Point();
+        constexpr T x() const;
+        constexpr T y() const;
+        constexpr T length() const;
+        constexpr bool straight() const;
+        std::string to_string() const;
+        constexpr T distance(Point<T> v) const;
+        void set_x(T v);
+        void set_y(T v);
+        void shift_x(T v);
+        void shift_y(T v);
+        void shift(T x, T y);
+        void shift(Point<T> v);
+        constexpr bool operator == (const Point<T>& v) const;
+        constexpr bool operator != (const Point<T>& v) const;
+        void operator += (Point<T> v);
+        void operator -= (Point<T> v);
+        constexpr Point<T> operator - () const;
+        constexpr Point<T> operator + (T v) const;
+        constexpr Point<T> operator - (T v) const;
+        constexpr Point<T> operator * (T v) const;
+        constexpr Point<T> operator / (T v) const;
+        constexpr Point<T> operator + (Point<T> v) const;
+        constexpr Point<T> operator - (Point<T> v) const;
+        constexpr Point<T> operator * (Point<T> v) const;
+        constexpr Point<T> operator / (Point<T> v) const;
     private:
         T a;
         T b;
