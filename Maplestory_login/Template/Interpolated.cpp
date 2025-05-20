@@ -5,8 +5,7 @@
 //  Created by Jacob on 5/19/25.
 //
 
-#include "Interpolated.hpp"
-#include "../Util/Lerp.hpp"
+
 
 namespace ms {
 

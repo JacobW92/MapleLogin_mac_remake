@@ -6,9 +6,8 @@
 //
 
 #include "TypeMap.hpp"
-#include <typeindex>
-#include <unordered_map>
-#include <memory>
+
+
 namespace ms {
 
     template <typename T>
