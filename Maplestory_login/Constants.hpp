@@ -9,5 +9,19 @@
 #define Constants_hpp
 
 #include <stdio.h>
+#include "Template/Singleton.hpp"
+#include <cstdint>
+
+namespace ms {
+    
+    namespace Constants {
+        
+    
+    }
+
+
+}
+
+
 
 #endif /* Constants_hpp */

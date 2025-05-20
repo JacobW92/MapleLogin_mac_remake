@@ -10,4 +10,8 @@
 
 #include <stdio.h>
 
+template <class T>
+class Range;
+
+
 #endif /* Range_hpp */

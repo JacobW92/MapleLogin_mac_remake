@@ -26,6 +26,8 @@
 // PRINT_WARNINGS : Print warnings and minor errors to the console.
 #define PRINT_WARNINGS
 
+#include "Configuration.hpp"
+
 
 namespace ms {
 
