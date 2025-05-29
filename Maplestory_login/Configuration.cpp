@@ -2,232 +2,292 @@
 //  Configuration.cpp
 //  Maplestory_login
 //
-//  Created by Jacob on 5/20/25.
+//  Created by Jacob on 5/19/25.
 //
 
 #include "Configuration.hpp"
 
+#include <fstream>
 
 namespace ms
 {
-        // IP Address which the client will connect to.
-    struct ServerIP : public Configuration::StringEntry
+    Configuration::Configuration()
     {
-        ServerIP() : StringEntry("ServerIP", "127.0.0.1") {}
-    };
+        settings.emplace<ServerIP>();
+        settings.emplace<ServerPort>();
+        settings.emplace<Fullscreen>();
+        settings.emplace<Width>();
+        settings.emplace<Height>();
+        settings.emplace<VSync>();
+        settings.emplace<FontPathNormal>();
+        settings.emplace<FontPathBold>();
+        settings.emplace<BGMVolume>();
+        settings.emplace<SFXVolume>();
+        settings.emplace<SaveLogin>();
+        settings.emplace<DefaultAccount>();
+        settings.emplace<DefaultWorld>();
+        settings.emplace<DefaultChannel>();
+        settings.emplace<DefaultCharacter>();
+        settings.emplace<Chatopen>();
+        settings.emplace<PosSTATS>();
+        settings.emplace<PosEQINV>();
+        settings.emplace<PosINV>();
+        settings.emplace<PosSKILL>();
+        settings.emplace<PosQUEST>();
+        settings.emplace<PosMAP>();
+        settings.emplace<PosUSERLIST>();
+        settings.emplace<PosCHAT>();
+        settings.emplace<PosMINIMAP>();
+        settings.emplace<PosSHOP>();
+        settings.emplace<PosNOTICE>();
+        settings.emplace<PosMAPLECHAT>();
+        settings.emplace<PosCHANNEL>();
+        settings.emplace<PosJOYPAD>();
+        settings.emplace<PosEVENT>();
+        settings.emplace<PosKEYCONFIG>();
+        settings.emplace<PosOPTIONMENU>();
 
-    // Port which the client will connect to.
-    struct ServerPort : public Configuration::StringEntry
-    {
-        ServerPort() : StringEntry("ServerPort", "8484") {}
-    };
+        load();
+    }
 
-    // Whether to start in fullscreen mode.
-    struct Fullscreen : public Configuration::BoolEntry
+    Configuration::~Configuration()
     {
-        Fullscreen() : BoolEntry("Fullscreen", "false") {}
-    };
+        save();
+    }
 
-    // The width of the screen
-    struct Width : public Configuration::ShortEntry
+    void Configuration::load()
     {
-        Width() : ShortEntry("Width", "800") {}
-    };
+        std::unordered_map<std::string, std::string> rawsettings;
+        std::ifstream file(FILENAME);
 
-    // The height of the screen
-    struct Height : public Configuration::ShortEntry
-    {
-        Height() : ShortEntry("Height", "600") {}
-    };
-
-    // Whether to use VSync.
-    struct VSync : public Configuration::BoolEntry
-    {
-        VSync() : BoolEntry("VSync", "true") {}
-    };
-
-    // The normal font which will be used.
-    struct FontPathNormal : public Configuration::StringEntry
-    {
-        FontPathNormal() : StringEntry("FontPathNormal", "fonts/Roboto/Roboto-Regular.ttf") {}
-    };
-
-    // The bold font which will be used.
-    struct FontPathBold : public Configuration::StringEntry
-    {
-        FontPathBold() : StringEntry("FontPathBold", "fonts/Roboto/Roboto-Bold.ttf") {}
-    };
-
-    // Music Volume, a number from 0 to 100.
-    struct BGMVolume : public Configuration::ByteEntry
-    {
-        BGMVolume() : ByteEntry("BGMVolume", "50") {}
-    };
-
-    // Sound Volume, a number from 0 to 100.
-    struct SFXVolume : public Configuration::ByteEntry
-    {
-        SFXVolume() : ByteEntry("SFXVolume", "50") {}
-    };
-
-    // Whether to save the last used account name.
-    struct SaveLogin : public Configuration::BoolEntry
-    {
-        SaveLogin() : BoolEntry("SaveLogin", "false") {}
-    };
-
-    // The last used account name.
-    struct DefaultAccount : public Configuration::StringEntry
-    {
-        DefaultAccount() : StringEntry("Account", "") {}
-    };
-
-    // The last used world.
-    struct DefaultWorld : public Configuration::ByteEntry
-    {
-        DefaultWorld() : ByteEntry("World", "0") {}
-    };
-
-    // The last used channel.
-    struct DefaultChannel : public Configuration::ByteEntry
-    {
-        DefaultChannel() : ByteEntry("Channel", "0") {}
-    };
-
-    // The last used character.
-    struct DefaultCharacter : public Configuration::ByteEntry
-    {
-        DefaultCharacter() : ByteEntry("Character", "0") {}
-    };
-
-    // Whether to show the chatbar.
-    struct Chatopen : public Configuration::BoolEntry
-    {
-        Chatopen() : BoolEntry("Chatopen", "false") {}
-    };
-
-    // The default position of the character stats inventory.
-    struct PosSTATS : public Configuration::PointEntry
-    {
-        PosSTATS() : PointEntry("PosSTATS", "(72,62)") {}
-    };
-
-    // The default position of the equipment inventory.
-    struct PosEQINV : public Configuration::PointEntry
-    {
-        PosEQINV() : PointEntry("PosEQINV", "(250,150)") {}
-    };
-
-    // The default position of the item inventory.
-    struct PosINV : public Configuration::PointEntry
-    {
-        PosINV() : PointEntry("PosINV", "(300,150)") {}
-    };
-
-    // The default position of the skill inventory.
-    struct PosSKILL : public Configuration::PointEntry
-    {
-        PosSKILL() : PointEntry("PosSKILL", "(96,86)") {}
-    };
-
-    // The default position of the quest log.
-    struct PosQUEST : public Configuration::PointEntry
-    {
-        PosQUEST() : PointEntry("PosQUEST", "(300,150)") {}
-    };
-
-    // The default position of the world map.
-    struct PosMAP : public Configuration::PointEntry
-    {
-        PosMAP() : PointEntry("PosMAP", "(100,25)") {}
-    };
-
-    // The default position of the userlist features.
-    struct PosUSERLIST : public Configuration::PointEntry
-    {
-        PosUSERLIST() : PointEntry("PosUSERLIST", "(104, 94)") {}
-    };
-
-    // The default position of the chatbar.
-    struct PosCHAT : public Configuration::PointEntry
-    {
-        PosCHAT() : PointEntry("PosCHAT", "(0, 562)") {}
-    };
-
-    // The default position of the mini map.
-    struct PosMINIMAP : public Configuration::PointEntry
-    {
-        PosMINIMAP() : PointEntry("PosMINIMAP", "(0, 0)") {}
-    };
-
-    // The default position of shops.
-    struct PosSHOP : public Configuration::PointEntry
-    {
-        PosSHOP() : PointEntry("PosSHOP", "(146, 38)") {}
-    };
-
-    // The default position of the notice windows.
-    struct PosNOTICE : public Configuration::PointEntry
-    {
-        PosNOTICE() : PointEntry("PosNOTICE", "(400, 275)") {}
-    };
-
-    // The default position of the maple chat.
-    struct PosMAPLECHAT : public Configuration::PointEntry
-    {
-        PosMAPLECHAT() : PointEntry("PosMAPLECHAT", "(50, 36)") {}
-    };
-
-    // The default position of the channel change.
-    struct PosCHANNEL : public Configuration::PointEntry
-    {
-        PosCHANNEL() : PointEntry("PosCHANNEL", "(215, 90)") {}
-    };
-
-    // The default position of the joypad.
-    struct PosJOYPAD : public Configuration::PointEntry
-    {
-        PosJOYPAD() : PointEntry("PosJOYPAD", "(312, 124)") {}
-    };
-
-    // The default position of the event list.
-    struct PosEVENT : public Configuration::PointEntry
-    {
-        PosEVENT() : PointEntry("PosEVENT", "(99, 90)") {}
-    };
-
-    // The default position of the key bindings.
-    struct PosKEYCONFIG : public Configuration::PointEntry
-    {
-        PosKEYCONFIG() : PointEntry("PosKEYCONFIG", "(65, 40)") {}
-    };
-
-    // The default position of the option menu.
-    struct PosOPTIONMENU : public Configuration::PointEntry
-    {
-        PosOPTIONMENU() : PointEntry("PosUSERLIST", "(170, -11)") {}
-    };
-
-    template <typename T>
-    // Can be used to access settings.
-    struct Setting
-    {
-        // Access a setting.
-        static T& get()
+        if (file.is_open())
         {
-            static_assert(std::is_base_of<Configuration::Entry, T>::value, "template parameter T for Setting must inherit from Configuration::Entry.");
+            // Go through the file line for line.
+            std::string line;
 
-            auto* entry = Configuration::get().settings.get<T>();
+            while (getline(file, line))
+            {
+                // If the setting is not empty, load the value.
+                std::size_t split = line.find('=');
 
-            if (entry)
-            {
-                return *entry;
-            }
-            else
-            {
-                static T defaultentry;
-                return defaultentry;
+                if (split != std::string::npos && split + 2 < line.size())
+                {
+                    rawsettings.emplace(
+                        line.substr(0, split - 1),
+                        line.substr(split + 2)
+                    );
+                }
             }
         }
-    };
+
+        // Replace default values with loaded values.
+        for (auto& setting : settings)
+        {
+            auto rsiter = rawsettings.find(setting.second->name);
+
+            if (rsiter != rawsettings.end())
+                setting.second->value = rsiter->second;
+        }
+    }
+
+    void Configuration::save() const
+    {
+        // Open the settings file.
+        std::ofstream config(FILENAME);
+
+        if (config.is_open())
+        {
+            // Save settings line by line.
+            for (auto& setting : settings)
+                config << setting.second->to_string() << std::endl;
+            }
+        }
+
+    void Configuration::BoolEntry::save(bool b)
+    {
+        value = b ? "true" : "false";
+    }
+
+    bool Configuration::BoolEntry::load() const
+    {
+        return value == "true";
+    }
+
+    void Configuration::StringEntry::save(std::string str)
+    {
+        value = str;
+    }
+
+    std::string Configuration::StringEntry::load() const
+    {
+        return value;
+    }
+
+    void Configuration::PointEntry::save(Point<int16_t> vec)
+    {
+        value = vec.to_string();
+    }
+
+    Point<int16_t> Configuration::PointEntry::load() const
+    {
+        std::string xstr = value.substr(1, value.find(",") - 1);
+        std::string ystr = value.substr(value.find(",") + 1, value.find(")") - value.find(",") - 1);
+
+        auto x = string_conversion::or_zero<int16_t>(xstr);
+        auto y = string_conversion::or_zero<int16_t>(ystr);
+
+        return { x, y };
+    }
+
+    bool Configuration::get_show_fps() const
+    {
+        return SHOW_FPS;
+    }
+
+    std::string Configuration::get_title() const
+    {
+        return TITLE;
+    }
+
+    std::string Configuration::get_version() const
+    {
+        return VERSION;
+    }
+
+    std::string Configuration::get_joinlink() const
+    {
+        return JOINLINK;
+    }
+
+    std::string Configuration::get_website() const
+    {
+        return WEBSITE;
+    }
+
+    std::string Configuration::get_findid() const
+    {
+        return FINDID;
+    }
+
+    std::string Configuration::get_findpass() const
+    {
+        return FINDPASS;
+    }
+
+    std::string Configuration::get_resetpic() const
+    {
+        return RESETPIC;
+    }
+
+    void Configuration::set_macs(char* macs)
+    {
+        MACS = macs;
+    }
+
+    void Configuration::set_hwid(char* hwid, char* volumeSerialNumber)
+    {
+        VolumeSerialNumber = volumeSerialNumber;
+
+        std::string newHWID;
+
+        newHWID.append(hwid);
+        newHWID.append("_");
+
+        std::string part1 = VolumeSerialNumber.substr(0, 2);
+        std::string part2 = VolumeSerialNumber.substr(2, 2);
+        std::string part3 = VolumeSerialNumber.substr(4, 2);
+        std::string part4 = VolumeSerialNumber.substr(6, 2);
+
+        newHWID.append(part4);
+        newHWID.append(part3);
+        newHWID.append(part2);
+        newHWID.append(part1);
+
+        HWID = newHWID;
+    }
+
+    void Configuration::set_max_width(std::int16_t max_width)
+    {
+        MAXWIDTH = max_width;
+    }
+
+    void Configuration::set_max_height(std::int16_t max_height)
+    {
+        MAXHEIGHT = max_height;
+    }
+
+    std::string Configuration::get_macs()
+    {
+        return MACS;
+    }
+
+    std::string Configuration::get_hwid()
+    {
+        return HWID;
+    }
+
+    std::string Configuration::get_vol_serial_num()
+    {
+        return VolumeSerialNumber;
+    }
+
+    std::int16_t Configuration::get_max_width()
+    {
+        return MAXWIDTH;
+    }
+
+    std::int16_t Configuration::get_max_height()
+    {
+        return MAXHEIGHT;
+    }
+
+    bool Configuration::get_rightclicksell()
+    {
+        return rightclicksell;
+    }
+
+    void Configuration::set_rightclicksell(bool value)
+    {
+        rightclicksell = value;
+    }
+
+    bool Configuration::get_show_weekly()
+    {
+        return show_weekly;
+    }
+
+    void Configuration::set_show_weekly(bool value)
+    {
+        show_weekly = value;
+    }
+
+    bool Configuration::get_start_shown()
+    {
+        return start_shown;
+    }
+
+    void Configuration::set_start_shown(bool value)
+    {
+        start_shown = value;
+    }
+
+    std::uint8_t Configuration::get_worldid()
+    {
+        return worldid;
+    }
+
+    void Configuration::set_worldid(std::uint8_t id)
+    {
+        worldid = id;
+    }
+
+    std::uint8_t Configuration::get_channelid()
+    {
+        return channelid;
+    }
+
+    void Configuration::set_channelid(std::uint8_t id)
+    {
+        channelid = id;
+    }
 }

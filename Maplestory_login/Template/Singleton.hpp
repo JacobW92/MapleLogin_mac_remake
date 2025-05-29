@@ -8,13 +8,27 @@
 #ifndef Singleton_hpp
 #define Singleton_hpp
 
-#include <stdio.h>
+namespace ms
+{
+    template <class T>
+    class Singleton
+    {
+    public:
+        virtual ~Singleton() {}
 
-namespace ms {
+        static T& get()
+        {
+            return instance;
+        }
+
+    private:
+        T& operator = (const T&) = delete;
+
+        static T instance;
+    };
 
     template <class T>
-    class Singleton;
+    T Singleton<T>::instance;
 }
-
 
 #endif /* Singleton_hpp */
